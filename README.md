@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Cretio Kaggle Display Advertising Challenge Dataset
 
 `wget https://s3-eu-west-1.amazonaws.com/criteo-labs/dac.tar.gz`
