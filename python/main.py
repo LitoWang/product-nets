@@ -8,8 +8,8 @@ import tensorflow as tf
 import utils
 from models import LR, FM, PNN1, PNN1_Fixed, PNN2, FNN, CCPM, Fast_CTR, Fast_CTR_Concat
 
-train_file = '/tmp/jwpan/data_cretio/train.txt.thres20.yx.0.7'
-test_file = '/tmp/jwpan/data_cretio/train.txt.thres20.yx.0.3'
+train_file = '../data_cretio/train.txt.thres20.yx.0.7'
+test_file = '../data_cretio/train.txt.thres20.yx.0.3'
 #train_file = '../data_cretio/train.txt.100000.yx.0.7.with_minus'
 #test_file = '../data_cretio/train.txt.100000.yx.0.3'
 # fm_model_file = '../data/fm.model.txt'
