@@ -8,10 +8,10 @@ import tensorflow as tf
 import utils
 from models import LR, FM, PNN1, PNN1_Fixed, PNN2, FNN, CCPM, Fast_CTR, Fast_CTR_Concat
 
-train_file = '../data_cretio/train.txt.thres20.yx.0.7'
-test_file = '../data_cretio/train.txt.thres20.yx.0.3'
-#train_file = '../data_cretio/train.txt.100000.yx.0.7.with_minus'
-#test_file = '../data_cretio/train.txt.100000.yx.0.3'
+#train_file = '../data_cretio/train.txt.yx.0.7'
+#test_file = '../data_cretio/train.txt.yx.0.3'
+train_file = '/Users/jwpan/Github/DL_for_Multifield_Categorical_Data/data_yahoo/ctr_20170517_0530_0.015.txt.thres10.yx'
+test_file = '/Users/jwpan/Github/DL_for_Multifield_Categorical_Data/data_yahoo/ctr_20170517_0530_0.015.txt.thres10.yx'
 # fm_model_file = '../data/fm.model.txt'
 print "train_file: ", train_file
 print "test_file: ", test_file
@@ -29,12 +29,13 @@ num_feas = len(utils.FIELD_SIZES)
 
 min_round = 1
 num_round = 1000
-early_stop_round = 50
+early_stop_round = 3
 batch_size = 2000
 
 field_sizes = utils.FIELD_SIZES
 field_offsets = utils.FIELD_OFFSETS
 
+print 'train_data', train_data
 
 def train(model):
     history_score = []
@@ -82,7 +83,7 @@ def train(model):
                 break
 
 
-algo = 'pnn2'
+algo = 'fm'
 print "algo", algo
 sys.stdout.flush()
 
@@ -100,8 +101,8 @@ elif algo == 'fm':
     fm_params = {
         'input_dim': input_dim,
         'factor_order': 10,
-        'opt_algo': 'gd',
-        'learning_rate': 0.1,
+        'opt_algo': 'adam',
+        'learning_rate': 0.0005,
         'l2_w': 0,
         'l2_v': 0,
     }

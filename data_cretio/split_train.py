@@ -1,6 +1,6 @@
 import random
 
-path = 'train.txt.thres20.yx'
+path = 'train.txt.yx'
 ratio = 0.7
 
 random.seed(19941030)
